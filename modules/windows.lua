@@ -34,7 +34,7 @@ function ohmyhs_sizeWindow(direction)
     end
 end
 
-hs.hotkey.bindSpec({hyper, "b"}, ohmyhs_sizeWindow("left"))
-hs.hotkey.bindSpec({hyper, "f"}, ohmyhs_sizeWindow("right"))
-hs.hotkey.bindSpec({hyper, "p"}, ohmyhs_sizeWindow("up"))
-hs.hotkey.bindSpec({hyper, "n"}, ohmyhs_sizeWindow("down"))
+hs.hotkey.bindSpec({hyper, "h"}, ohmyhs_sizeWindow("left"))
+hs.hotkey.bindSpec({hyper, "l"}, ohmyhs_sizeWindow("right"))
+hs.hotkey.bindSpec({hyper, "k"}, ohmyhs_sizeWindow("up"))
+hs.hotkey.bindSpec({hyper, "j"}, ohmyhs_sizeWindow("down"))
