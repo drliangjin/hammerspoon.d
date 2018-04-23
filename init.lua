@@ -8,3 +8,4 @@
 
 require("core/keys")
 require("modules/windows")
+require("modules/caffeine")
