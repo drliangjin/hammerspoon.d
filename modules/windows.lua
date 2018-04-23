@@ -27,6 +27,11 @@ function ohmyhs_sizeWindow(direction)
             f.y = max.y + (max.h / 2)
             f.w = max.w
             f.h = max.h / 2
+	elseif direction == "max" then
+            f.x = max.x
+            f.y = max.y
+            f.w = max.w
+            f.h = max.h	
         else
             hs.alert.show("Invalid Input")
 	end
@@ -38,3 +43,4 @@ hs.hotkey.bindSpec({hyper, "h"}, ohmyhs_sizeWindow("left"))
 hs.hotkey.bindSpec({hyper, "l"}, ohmyhs_sizeWindow("right"))
 hs.hotkey.bindSpec({hyper, "k"}, ohmyhs_sizeWindow("up"))
 hs.hotkey.bindSpec({hyper, "j"}, ohmyhs_sizeWindow("down"))
+hs.hotkey.bindSpec({hyper, "m"}, ohmyhs_sizeWindow("m"))
