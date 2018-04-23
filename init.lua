@@ -6,4 +6,5 @@
 
 -- TODO:
 
-require "modules/windows.lua"
+require("core/keys")
+require("modules/windows")
