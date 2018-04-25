@@ -1,4 +1,3 @@
 -- hotkey
 
-hyper = {'ctrl', 'alt'}
-hyperShift = {'ctrl', 'alt', 'shift'}
+hyper = {'shift', 'ctrl', 'alt', 'cmd'}
