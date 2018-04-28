@@ -1,5 +1,11 @@
-# oh-my-hammerspoon
-Oh-My-Hammerspoon
+# Oh-My-Hammerspoon
+by Dr Liang Jin
+
+This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
+
+## Quick Start
+
+## Key Map
 
 ## Resources
 - [zzamboni's blog on getting started with hammerspoon](http://zzamboni.org/post/getting-started-with-hammerspoon/)
