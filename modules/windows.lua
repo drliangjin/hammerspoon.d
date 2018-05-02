@@ -1,3 +1,5 @@
+-- windows movement animation duration, default = 0.2
+hs.window.animationDuration = 0
 
 -- basic windows sizing
 function ohmyhs_sizeWindow(direction)
