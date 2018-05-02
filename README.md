@@ -4,11 +4,11 @@ by Dr Liang Jin
 This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
 
 ## Quick Start
-
+- Clone this repo:
 ```bash
 git clone https://github.com/drliangjin/oh-my-hammerspoon.git ~/.hammerspoon.d
 ```
-
+- Symlink to default config file
 ```bash
 ln -s ~/.hammerspoon.d ~/.hammerspoon
 ```
