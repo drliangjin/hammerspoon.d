@@ -5,6 +5,10 @@ This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
 
 ## Quick Start
 
+```bash
+git clone https://github.com/drliangjin/oh-my-hammerspoon.git ~/.hammerspoon
+```
+
 ## Key Map
 
 ## Resources
