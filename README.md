@@ -6,11 +6,11 @@ This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
 ## Quick Start
 
 ```bash
-git clone https://github.com/drliangjin/oh-my-hammerspoon.git ~/.oh-my-hammerspoon
+git clone https://github.com/drliangjin/oh-my-hammerspoon.git ~/.hammerspoon.d
 ```
 
 ```bash
-ln -s ~/.oh-my-hammerspoon ~/.hammerspoon
+ln -s ~/.hammerspoon.d ~/.hammerspoon
 ```
 ## Key Map
 
