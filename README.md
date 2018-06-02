@@ -3,14 +3,9 @@ by Dr Liang Jin
 
 This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
 
-## Quick Start
-- Clone this repo:
+## :sparkles: Quick Start
 ```bash
-git clone https://github.com/drliangjin/oh-my-hammerspoon.git ~/oh-my-hammerspoon
-```
-- Symlink to default config file
-```bash
-ln -s ~/oh-my-hammerspoon ~/.hammerspoon
+git clone https://github.com/drliangjin/hammerspoon.d.git && ln -sf ~/hammerspoon.d ~/.hammerspoon
 ```
 ## Key Map
 
