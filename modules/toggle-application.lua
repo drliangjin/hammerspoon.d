@@ -1,4 +1,4 @@
--- Launch/Hide applications
+-- Toggle applications
 
 -- hs.application.enableSpotlightForNameSearches(false)
 
