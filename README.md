@@ -3,7 +3,7 @@ by Dr Liang Jin
 
 ## :zap: Quick Start
 ```
-git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammerspoon.d ~/.hammerspoon
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/drliangjin/.hammerspoon.d/master/utils/install)"
 ```
 ## :scroll: Introduction
 This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
