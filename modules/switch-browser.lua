@@ -13,15 +13,15 @@ local browser_menu       = hs.menubar.new()
 local available_browsers = {
     ["com.apple.safari"] = {
         name = "Safari",
-        icon = os.getenv("HOME") .. "/.hammerspoon/browsermenu/safari.png"
+        icon = os.getenv("HOME") .. "/.hammerspoon/assets/browser-menu/safari.png"
     },
     ["org.mozilla.firefox"] = {
         name = "Firefox",
-        icon = os.getenv("HOME") .. "/.hammerspoon/browsermenu/firefox.png"
+        icon = os.getenv("HOME") .. "/.hammerspoon/assets/browser-menu/firefox.png"
     },
     ["com.google.chrome"] = {
         name = "Google Chrome",
-        icon = os.getenv("HOME") .. "/.hammerspoon/browsermenu/chrome.png"
+        icon = os.getenv("HOME") .. "/.hammerspoon/assets/browser-menu/chrome.png"
     },
 }
 
