@@ -1,7 +1,7 @@
 mouseCircle = nil
 mouseCircleTimer = nil
 
-function mouseHighlight()
+function highlightMouse()
     -- Delete an existing highlight if it exists
     if mouseCircle then
         mouseCircle:delete()
@@ -22,4 +22,4 @@ function mouseHighlight()
     mouseCircleTimer = hs.timer.doAfter(3, function() mouseCircle:delete() end)
 end
 
-hs.hotkey.bindSpec({hyper, "d"}, mouseHighlight)
+hs.hotkey.bindSpec({hyper, "d"}, highlightMouse)
