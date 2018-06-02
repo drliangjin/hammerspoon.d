@@ -5,10 +5,10 @@ by Dr Liang Jin
 ```
 git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammerspoon.d ~/.hammerspoon
 ```
-## :guardsman: Introduction
+## :scroll: Introduction
 This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
 
-## :construction_worker_man: Installation
+## :hammer_and_wrench: Installation
 - Install [Hammerspoon](https://www.hammerspoon.org/) using [Homebrew](https://brew.sh/), the missing package manager for macOS:
 ```
 brew cask install hammerspoonk
@@ -22,7 +22,11 @@ brew cask install luarocks
 git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammerspoon.d ~/.hammerspoon
 ```
 
-## Key Map
+## :musical_keyboard: Keyboard Shortcuts
+
+## :loudspeaker: Updates
+
+## :construction: Development
 
 ## :open_book: Resources
 - [zzamboni's blog on getting started with hammerspoon](http://zzamboni.org/post/getting-started-with-hammerspoon/)
