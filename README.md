@@ -2,11 +2,25 @@
 by Dr Liang Jin
 
 ## :zap: Quick Start
-```bash
+```
 git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammerspoon.d ~/.hammerspoon
 ```
 ## :guardsman: Introduction
 This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
+
+## :construction_worker_man: Installation
+- Install [Hammerspoon](https://www.hammerspoon.org/) using [Homebrew](https://brew.sh/), the missing package manager for macOS:
+```
+brew cask install hammerspoonk
+```
+- Optionally, install [LuaRocks](https://luarocks.org/), the package manager for lua modules:
+```
+brew cask install luarocks
+```
+- Clone this repository:
+```
+git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammerspoon.d ~/.hammerspoon
+```
 
 ## Key Map
 
