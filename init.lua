@@ -9,4 +9,4 @@
 require("core/keys")
 require("modules/windows")
 require("modules/caffeine")
-require("modules/launcher")
+require("modules/toggle-application")
