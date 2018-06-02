@@ -1,1 +1,40 @@
+#!/usr/bin/env bash
 
+# macOS only
+[[ "$(uname -s)" = "Darwin" ]] || exit 1
+
+GH_USER=drliangjin
+GH_REPO=.hammerspoon.d
+GH_BRANCH=master
+GH_DIR=~/${GH_REPO}
+
+# symlink
+LN_DIR=~/.hammerspoon
+
+cmd_exists() {
+  command -v $1 > /dev/null 2>&1
+}
+
+echo "Starting to deploy ${GH_REPO}..."
+
+# Homebrew
+if ! cmd_exists brew; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if [[ $? != 0 ]]; then
+    echo " => unable to install Homebrew!"
+    exit 1
+  fi
+fi
+      
+# git
+if ! cmd_exists git; then
+  brew install git
+  if [[ $? != 0 ]]; then
+    echo " => unable to install git!"
+    exit 1
+  fi
+fi
+
+git clone --branch ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git && \
+ln -sf ${GH_DIR} ${LN_DIR} && \
+echo "${GH_REPO} has been successfully deployed."
