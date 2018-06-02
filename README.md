@@ -1,15 +1,15 @@
-# Oh-My-Hammerspoon
+# :sparkles: Hammerspoon Configuration
 by Dr Liang Jin
 
 This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
 
-## :sparkles: Quick Start
+## :zap: Quick Start
 ```bash
 git clone https://github.com/drliangjin/hammerspoon.d.git && ln -sf ~/hammerspoon.d ~/.hammerspoon
 ```
 ## Key Map
 
-## Resources
+## :open_book: Resources
 - [zzamboni's blog on getting started with hammerspoon](http://zzamboni.org/post/getting-started-with-hammerspoon/)
 - [zzamboni's blog on using spoons in hammerspoon](http://zzamboni.org/post/using-spoons-in-hammerspoon/)
 - [zzamboni's blog on lua for hammerspoon part 1](http://zzamboni.org/post/just-enough-lua-to-be-productive-in-hammerspoon-part-1/)
