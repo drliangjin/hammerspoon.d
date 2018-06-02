@@ -5,9 +5,9 @@ local caffeine = hs.menubar.new()
  
 function setCaffeineDisplay(state)
     if state then
-        caffeine:setIcon(os.getenv("HOME") .. "/.hammerspoon/assets/caffeine/active.png")
+        caffeine:setIcon(os.getenv("HOME") .. "/.hammerspoon/assets/caffeine-menu/active.png")
     else
-        caffeine:setIcon(os.getenv("HOME") .. "/.hammerspoon/assets/caffeine/inactive.png")
+        caffeine:setIcon(os.getenv("HOME") .. "/.hammerspoon/assets/caffeine-menu/inactive.png")
     end
 end
  
