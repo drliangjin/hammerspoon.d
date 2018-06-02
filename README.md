@@ -1,12 +1,13 @@
 # :sparkles: Hammerspoon Configuration
 by Dr Liang Jin
 
-This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
-
 ## :zap: Quick Start
 ```bash
 git clone https://github.com/drliangjin/hammerspoon.d.git && ln -sf ~/hammerspoon.d ~/.hammerspoon
 ```
+## :guardsman: Introduction
+This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
+
 ## Key Map
 
 ## :open_book: Resources
