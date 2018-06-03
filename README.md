@@ -1,5 +1,5 @@
 # :sparkles: Hammerspoon Configuration
-by Dr Liang Jin
+Created with :heart: by Dr Liang Jin
 
 ## :zap: Quick Start
 ```
