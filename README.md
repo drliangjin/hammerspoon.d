@@ -24,7 +24,7 @@ git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammersp
 ## :sparkles: Features
 
 ## :open_book: Docs
-### :musical_keyboard: Keyboard Shortcuts
+- :musical_keyboard: Keyboard Shortcuts
 
 ## :loudspeaker: Updates
 
