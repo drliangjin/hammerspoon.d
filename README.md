@@ -1,7 +1,7 @@
 # :sparkles: Hammerspoon Configuration
 Created with :heart: by Dr Liang Jin
 
-## :zap: Quick Start
+## :package: Quick Start
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/drliangjin/.hammerspoon.d/master/tools/install)"
 ```
