@@ -21,14 +21,16 @@ brew cask install luarocks
 ```
 git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammerspoon.d ~/.hammerspoon
 ```
+## :sparkles: Features
 
-## :musical_keyboard: Keyboard Shortcuts
+## :open_book: Docs
+### :musical_keyboard: Keyboard Shortcuts
 
 ## :loudspeaker: Updates
 
 ## :construction: Development
 
-## :open_book: Resources
+## :beginner: Resources
 - [zzamboni's blog on getting started with hammerspoon](http://zzamboni.org/post/getting-started-with-hammerspoon/)
 - [zzamboni's blog on using spoons in hammerspoon](http://zzamboni.org/post/using-spoons-in-hammerspoon/)
 - [zzamboni's blog on lua for hammerspoon part 1](http://zzamboni.org/post/just-enough-lua-to-be-productive-in-hammerspoon-part-1/)
