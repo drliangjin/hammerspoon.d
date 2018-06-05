@@ -1,4 +1,4 @@
--- init.lua oh-my-hammerspoon initialization file
+-- init.lua -- main hammerspoon initialization file
 
 -- Author:   Liang Jin
 -- Version:  0.1
@@ -10,7 +10,7 @@
 require("core/keys")
 require("core/spoons")
 
--- Essential modules
+-- Modules
 require("modules/windows")
 require("modules/caffeine")
 require("modules/toggle-application")
