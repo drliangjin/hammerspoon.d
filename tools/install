@@ -50,7 +50,7 @@ function install_hammerspoon() {
   echo "Installing Hammerspoon...done"
   
   echo "Deploying Hammerspoon configuration..."
-  git clone -qb ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git > /dev/null 2>&1 && \
+  git clone -q -b ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git && \
   ln -sf ${HS_DIR} ${LINK_DIR} && \
   echo "Deploying Hammerspoon configuration...done"
   
