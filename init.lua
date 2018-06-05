@@ -12,6 +12,5 @@ require("core/spoons")
 
 -- Modules
 require("modules/windows")
-require("modules/caffeine")
 require("modules/toggle-application")
 require("modules/switch-browser")
