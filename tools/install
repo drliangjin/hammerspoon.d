@@ -39,7 +39,22 @@ function install_homebrew() {
   fi
 }
 
-# Homebrew cask install
+# brew install
+function brew_install() {
+  local formulae=$1
+  if [[ ! -z "${formulae}" ]]; then
+    echo "Installing $formulae..."
+    brew install $formulae > /dev/null 2>&1 
+    if [[ $? != 0 ]]; then
+      echo " => unable to install $formulae !"
+      return 1
+    else
+      echo "Installing $formulae...done"
+    fi
+  fi
+}
+
+# cask install
 function cask_install() {
   local formulae=$1
   if [[ ! -z "${formulae}" ]]; then
@@ -80,13 +95,16 @@ function download_spoon() {
 }
 
 function main() {
+
   install_homebrew &&\
   
   brew_install lua &&\
   
   cask_install hammerspoon &&\
   
-  install_spoon
+  clone_config &&\
+  
+  download_spoon SpoonInstall
 }
 
 main
