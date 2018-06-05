@@ -1,13 +1,10 @@
 -- init.lua -- main hammerspoon initialization file
 
--- Author:   Liang Jin
--- Version:  0.1
--- Keywords: hammerspoon
-
--- TODO:
+-- Hyper Key
+-- See Karabiner-Elements configuration
+hyper = {'shift', 'ctrl', 'alt', 'cmd'}
 
 -- Core functionality
-require("core/keys")
 require("core/spoons")
 
 -- Modules
