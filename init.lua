@@ -6,7 +6,11 @@
 
 -- TODO:
 
+-- Core functionality
 require("core/keys")
+require("core/spoons")
+
+-- Essential modules
 require("modules/windows")
 require("modules/caffeine")
 require("modules/toggle-application")
