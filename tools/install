@@ -1,40 +1,61 @@
 #!/usr/bin/env bash
 
 # macOS only
-[[ ! "$(uname -s)" = "Darwin" ]] && echo "Hammerspoon is only available for macOS!" && exit 1
+[[ ! "$(uname -s)" = "Darwin" ]] && \
+echo "Hammerspoon is only available for macOS!" && \
+exit 1
 
-GH_USER=drliangjin
-GH_REPO=.hammerspoon.d
-GH_BRANCH=master
-GH_DIR=~/${GH_REPO}
+# Homebrew URL
+BREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
 
+# SpoonInstall URL
+SPOONS_URL="https://github.com/Hammerspoon/Spoons/raw/master/Spoons/"
+SPOON_ZIP="SpoonInstall.spoon.zip"
+SPOON=${SPOON_ZIP%%.*} # trim the longest match from the end
+
+# Git Repo
+GH_USER="drliangjin"
+GH_REPO=".hammerspoon.d"
+GH_BRANCH="master"
+HS_DIR="$HOME/${GH_REPO}"
+SPOONS_DIR=$HS_DIR/Spoons
 # symlink
-LN_DIR=~/.hammerspoon
+LINK_DIR="$HOME/.hammerspoon"
 
-cmd_exists() {
+function command_exists() {
   command -v $1 > /dev/null 2>&1
 }
 
-echo "Starting to deploy ${GH_REPO}..."
-
 # Homebrew
-if ! cmd_exists brew; then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  if [[ $? != 0 ]]; then
-    echo " => unable to install Homebrew!"
-    exit 1
+function install_brew() {
+  if ! command_exists brew; then
+    /usr/bin/ruby -e "$(curl -fsSL ${BREW_URL})" > /dev/null 2>&1
+    if [[ $? != 0 ]]; then
+      echo " => unable to install Homebrew!"
+      exit 1
+    fi
   fi
-fi
-      
-# git
-if ! cmd_exists git; then
-  brew install git
-  if [[ $? != 0 ]]; then
-    echo " => unable to install git!"
-    exit 1
-  fi
-fi
+}
 
-git clone --branch ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git && \
-ln -sf ${GH_DIR} ${LN_DIR} && \
-echo "${GH_REPO} has been successfully deployed."
+function download_spoon() {
+  echo "Downloading Spoon: ${SPOON}..."
+  curl -fsSL ${SPOONS_URL}${SPOON_ZIP}
+}
+
+function install_hammerspoon() {
+  echo "Installing Hammerspoon..."
+  install_brew && brew cask install hammerspoon > /dev/null 2>&1 && \
+  echo "Installing Hammerspoon...done"
+  
+  echo "Deploying Hammerspoon configuration..."
+  git clone --branch ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git && \
+  ln -sf ${HS_DIR} ${LINK_DIR} && \
+  echo "Deploying Hammerspoon configuration...done"
+  
+  echo "Installing Spoon: ${SPOON}..."
+  mkdir -p $SPOONS_DIR
+  curl -fsSL ${SPOONS_URL}${SPOON_ZIP} -o $HOME/Downloads/$SPOON_ZIP
+  unzip $HOME/Downloads/$SPOON_ZIP -d $SPOONS_DIR
+}
+
+install_hammerspoon
