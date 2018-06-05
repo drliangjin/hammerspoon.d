@@ -13,9 +13,9 @@ This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
 ```
 brew cask install hammerspoonk
 ```
-- Optionally, install [LuaRocks](https://luarocks.org/), the package manager for lua modules:
+- Optionally, install [Lua](http://www.lua.org/) [Homebrew](https://brew.sh/) version including [LuaRocks](https://luarocks.org/), the package manager for lua modules:
 ```
-brew cask install luarocks
+brew install lua
 ```
 - Clone this repository:
 ```
