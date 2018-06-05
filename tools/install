@@ -57,7 +57,7 @@ function install_hammerspoon() {
   echo "Installing Spoon: ${SPOON}..."
   mkdir -p $SPOONS_DIR
   curl -fsSL ${SPOONS_URL}${SPOON_ZIP} -o $HOME/Downloads/$SPOON_ZIP
-  unzip $HOME/Downloads/$SPOON_ZIP -d $SPOONS_DIR
+  unzip -q $HOME/Downloads/$SPOON_ZIP -d $SPOONS_DIR
   echo "Installing Spoon: ${SPOON}...done"
 }
 
