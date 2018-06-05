@@ -3,7 +3,7 @@
 # macOS only
 [[ ! "$(uname -s)" = "Darwin" ]] && \
 echo "Hammerspoon is only available for macOS!" && \
-exit 1
+return 1
 
 # Homebrew URL
 BREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
@@ -17,8 +17,10 @@ SPOON=${SPOON_ZIP%%.*} # trim the longest match from the end
 GH_USER="drliangjin"
 GH_REPO=".hammerspoon.d"
 GH_BRANCH="master"
+
+# Hammerspoon
 HS_DIR="$HOME/${GH_REPO}"
-SPOONS_DIR=$HS_DIR/Spoons
+
 # symlink
 LINK_DIR="$HOME/.hammerspoon"
 
@@ -27,41 +29,62 @@ function command_exists() {
 }
 
 # Homebrew
-function install_brew() {
+function install_homebrew() {
   if ! command_exists brew; then
     /usr/bin/ruby -e "$(curl -fsSL ${BREW_URL})" > /dev/null 2>&1
     if [[ $? != 0 ]]; then
       echo " => unable to install Homebrew!"
-      exit 1
+      return 1
     fi
   fi
 }
 
-function install_hammerspoon() {
-  echo "Installing Hammerspoon..."
-  install_brew && brew cask install hammerspoon > /dev/null 2>&1 && \
-  echo "Installing Hammerspoon...done"
+# Homebrew cask install
+function cask_install() {
+  local formulae=$1
+  if [[ ! -z "${formulae}" ]]; then
+    echo "Installing $formulae..."
+    brew cask install $formulae > /dev/null 2>&1 
+    if [[ $? != 0 ]]; then
+      echo " => unable to install $formulae !"
+      return 1
+    else
+      echo "Installing $formulae...done"
+    fi
+  fi
 }
 
-function config_hammerspoon() {
+function clone_config() {
   echo "Deploying Hammerspoon configuration..."
   git clone -q -b ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git && \
   ln -sf ${HS_DIR} ${LINK_DIR} && \
   echo "Deploying Hammerspoon configuration...done"
 }
 
-function install_spoon() {
-  echo "Installing Spoon: ${SPOON}..."
-  mkdir -p $SPOONS_DIR
-  curl -fsSL ${SPOONS_URL}${SPOON_ZIP} -o $HOME/Downloads/$SPOON_ZIP
-  unzip -q $HOME/Downloads/$SPOON_ZIP -d $SPOONS_DIR
-  echo "Installing Spoon: ${SPOON}...done"
+function download_spoon() {
+  local spoon_name=$1
+  if [[ ! -z "${spoon_name}" ]]; then
+    local spoon_url="https://github.com/Hammerspoon/Spoons/raw/master/Spoons/${spoon_name}.spoon.zip"
+    local spoon_dir="${HS_DIR}/Spoons"
+    echo "Downloading Spoon: ${spoon_name}..."
+    cd /tmp
+    curl -fsSLO "${spoon_url}"
+    mkdir -p "${spoon_dir}" && unzip -q "${spoon_name}.spoon.zip" -d "${spoon_dir}"
+    if [[ $? != 0 ]]; then
+      echo " => unable to download ${spoon_name} !"
+      return 1
+    else
+      echo "Installing Spoon: ${spoon_name}...done"
+    fi
+  fi
 }
 
 function main() {
-  install_hammerspoon &&\
+  install_homebrew &&\
   
-  config_hammerspoon &&\
+  brew_install lua &&\
+  
+  cask_install hammerspoon &&\
   
   install_spoon
 }
