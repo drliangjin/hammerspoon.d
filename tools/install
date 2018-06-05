@@ -38,8 +38,10 @@ function install_brew() {
 }
 
 function download_spoon() {
-  echo "Downloading Spoon: ${SPOON}..."
-  curl -fsSL ${SPOONS_URL}${SPOON_ZIP}
+  echo "Installing Spoon: ${SPOON}..."
+  mkdir -p $SPOONS_DIR
+  curl -fsSL ${SPOONS_URL}${SPOON_ZIP} -o $HOME/Downloads/$SPOON_ZIP
+  unzip $HOME/Downloads/$SPOON_ZIP -d $SPOONS_DIR
 }
 
 function install_hammerspoon() {
@@ -56,6 +58,7 @@ function install_hammerspoon() {
   mkdir -p $SPOONS_DIR
   curl -fsSL ${SPOONS_URL}${SPOON_ZIP} -o $HOME/Downloads/$SPOON_ZIP
   unzip $HOME/Downloads/$SPOON_ZIP -d $SPOONS_DIR
+  echo "Installing Spoon: ${SPOON}...done"
 }
 
 install_hammerspoon
