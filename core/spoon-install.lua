@@ -2,7 +2,6 @@
 
 hs.loadSpoon("SpoonInstall")
 
--- 
 spoon.SpoonInstall.repos = {
   default = {
     url = "https://github.com/Hammerspoon/Spoons",
