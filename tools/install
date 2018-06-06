@@ -5,14 +5,6 @@
 echo "Hammerspoon is only available for macOS!" && \
 return 1
 
-# Homebrew URL
-BREW_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
-
-# SpoonInstall URL
-SPOONS_URL="https://github.com/Hammerspoon/Spoons/raw/master/Spoons/"
-SPOON_ZIP="SpoonInstall.spoon.zip"
-SPOON=${SPOON_ZIP%%.*} # trim the longest match from the end
-
 # Git Repo
 GH_USER="drliangjin"
 GH_REPO=".hammerspoon.d"
@@ -31,7 +23,7 @@ function command_exists() {
 # Homebrew
 function install_homebrew() {
   if ! command_exists brew; then
-    /usr/bin/ruby -e "$(curl -fsSL ${BREW_URL})" > /dev/null 2>&1
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install" > /dev/null 2>&1
     if [[ $? != 0 ]]; then
       echo " => unable to install Homebrew!"
       return 1
