@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
 
+set -e
+
 # macOS only
 [[ ! "$(uname -s)" = "Darwin" ]] && \
 echo "Hammerspoon is only available for macOS!" && \
 return 1
 
-# Git Repo
+# Remote configuration repo
 GH_USER="drliangjin"
 GH_REPO=".hammerspoon.d"
 GH_BRANCH="master"
 
-# Hammerspoon configuration dir
-HS_DIR="$HOME/${GH_REPO}"
+# Local configuration dir
+CONFIG_DIR="$HOME/${GH_REPO}"
 
 # Spoon Archives
 SPOONS_ARC="https://github.com/Hammerspoon/Spoons/raw/master/Spoons"
-SPOONS_DIR="${HS_DIR}/Spoons"
+SPOONS_DIR="${CONFIG_DIR}/Spoons"
 
 # symlink
 LINK_DIR="$HOME/.hammerspoon"
@@ -74,11 +76,11 @@ function cask_install() {
 }
 
 function git_clone() {
-  local config_dir="${HS_DIR}"
+  local config_dir="${CONFIG_DIR}"
   echo "Deploying Hammerspoon configuration..."
   if [[ ! -d "${config_dir}" ]]; then
     git clone -q -b ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git && \
-    ln -sf ${HS_DIR} ${LINK_DIR} && \
+    ln -sf ${CONFIG_DIR} ${LINK_DIR} && \
     echo "Deploying Hammerspoon configuration...done "
   else
     echo "Deploying Hammerspoon configuration...skipped "
