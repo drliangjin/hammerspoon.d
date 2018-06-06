@@ -73,7 +73,7 @@ function cask_install() {
   fi
 }
 
-function clone_config() {
+function git_clone() {
   local config_dir="${HS_DIR}"
   echo "Deploying Hammerspoon configuration..."
   if [[ ! -d "${config_dir}" ]]; then
@@ -115,7 +115,7 @@ function main() {
   
   cask_install hammerspoon && \
   
-  clone_config && \
+  git_clone && \
   
   download_spoon SpoonInstall
 }
