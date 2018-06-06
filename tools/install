@@ -110,15 +110,10 @@ function download_spoon() {
 }
 
 function main() {
-
   install_homebrew && \
-  
   brew_install lua && \
-  
   cask_install hammerspoon && \
-  
   git_clone && \
-  
   download_spoon SpoonInstall
 }
 
