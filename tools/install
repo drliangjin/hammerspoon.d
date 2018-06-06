@@ -73,10 +73,15 @@ function cask_install() {
 }
 
 function clone_config() {
+  local config_dir="${HS_DIR}"
   echo "Deploying Hammerspoon configuration..."
-  git clone -q -b ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git && \
-  ln -sf ${HS_DIR} ${LINK_DIR} && \
-  echo "Deploying Hammerspoon configuration...done "
+  if [[ ! -d "${config_dir}" ]]; then
+    git clone -q -b ${GH_BRANCH} https://github.com/${GH_USER}/${GH_REPO}.git && \
+    ln -sf ${HS_DIR} ${LINK_DIR} && \
+    echo "Deploying Hammerspoon configuration...done "
+  else
+    echo "Deploying Hammerspoon configuration...skipped "
+  fi
 }
 
 function download_spoon() {
