@@ -5,7 +5,7 @@
 hyper = {'shift', 'ctrl', 'alt', 'cmd'}
 
 -- Core functionality
-require("core/spoons")
+require("core/spoon-install")
 
 -- Modules
 require("modules/windows")
