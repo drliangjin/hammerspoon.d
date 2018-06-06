@@ -89,9 +89,9 @@ function download_spoon() {
   local spoon_name=$1
   if [[ ! -z "${spoon_name}" ]]; then
     local spoon_url="${SPOONS_ARC}/${spoon_name}.spoon.zip"
-    local spoon_file="${SPOONS_DIR}/${spoon_name}.spoon"
+    local spoon_dir="${SPOONS_DIR}/${spoon_name}.spoon"
     echo "Downloading Spoon: ${spoon_name}..."
-    if [[ ! -f "${spoon_file}" ]]; then
+    if [[ ! -d "${spoon_dir}" ]]; then
       cd /tmp
       curl -fsSLO "${spoon_url}"
       mkdir -p "${SPOONS_DIR}" && unzip -q "${spoon_name}.spoon.zip" -d "${SPOONS_DIR}"
