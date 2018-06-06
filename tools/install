@@ -36,12 +36,14 @@ function brew_install() {
   local formulae=$1
   if [[ ! -z "${formulae}" ]]; then
     echo "Installing $formulae..."
-    brew install $formulae > /dev/null 2>&1 
-    if [[ $? != 0 ]]; then
-      echo " => unable to install $formulae !"
-      return 1
-    else
-      echo "Installing $formulae...done"
+    if ! brew list "${formulae}" > /dev/null 2>&1; then
+      brew install "${formulae}" > /dev/null 2>&1 
+      if [[ $? != 0 ]]; then
+        echo " => unable to install "${formulae}" !"
+        return 1
+      else
+        echo "Installing "${formulae}"...done"
+      fi
     fi
   fi
 }
@@ -51,12 +53,14 @@ function cask_install() {
   local formulae=$1
   if [[ ! -z "${formulae}" ]]; then
     echo "Installing $formulae..."
-    brew cask install $formulae > /dev/null 2>&1 
-    if [[ $? != 0 ]]; then
-      echo " => unable to install $formulae !"
-      return 1
-    else
-      echo "Installing $formulae...done"
+    if ! brew cask list "${formulae}" > /dev/null 2>&1; then
+      brew cask install $formulae > /dev/null 2>&1 
+      if [[ $? != 0 ]]; then
+        echo " => unable to install $formulae !"
+        return 1
+      else
+        echo "Installing $formulae...done"
+      fi
     fi
   fi
 }
