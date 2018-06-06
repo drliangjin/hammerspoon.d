@@ -107,4 +107,4 @@ function main() {
   download_spoon SpoonInstall
 }
 
-main
+main "$@"
