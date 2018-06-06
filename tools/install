@@ -23,7 +23,7 @@ function command_exists() {
 # Homebrew
 function install_homebrew() {
   if ! command_exists brew; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install" > /dev/null 2>&1
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null 2>&1
     if [[ $? != 0 ]]; then
       echo " => unable to install Homebrew!"
       return 1
