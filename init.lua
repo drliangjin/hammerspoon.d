@@ -60,6 +60,8 @@ spoon.SpoonInstall:installSpoonFromRepo("Caffeine")
 -------------------------------
 hsMode = hs.hotkey.modal.new(hyper, 'h')
 
+hsMode:bind('', 'escape', function() hsMode:exit() end)
+
 function hsMode:entered()
   hs.alert'Entered Hammerspoon mode' 
 end
