@@ -11,7 +11,7 @@ This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
 ## :hammer_and_wrench: Installation
 - Install [Hammerspoon](https://www.hammerspoon.org/) using [Homebrew](https://brew.sh/), the missing package manager for macOS:
 ```
-brew cask install hammerspoonk
+brew cask install hammerspoon
 ```
 - Optionally, install [Lua](http://www.lua.org/) ([Homebrew](https://brew.sh/) version including [LuaRocks](https://luarocks.org/), the package manager for lua modules):
 ```
