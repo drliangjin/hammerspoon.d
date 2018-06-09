@@ -20,7 +20,7 @@ hs.menuIcon(true)
 hs.dockIcon(false)
 
 -- Keep Console window on top
-hs.consoleOnTop([state])
+hs.consoleOnTop(true)
 
 -- Send crash data to Hammerspoon
 hs.uploadCrashData(true)
