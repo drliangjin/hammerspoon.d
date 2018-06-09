@@ -71,20 +71,25 @@ end
 -------------------------------
 -- Hotkey Modal
 -------------------------------
-hsMode = hs.hotkey.modal.new(hyper, 'h')
+-- Enter Leader Mode
+leaderMode = hs.hotkey.modal.new(hyper, 'space')
 
-hsMode:bind('', 'escape', function() hsMode:exit() end)
-
-function hsMode:entered()
-  hs.alert'Entered Hammerspoon mode' 
-end
-
-function hsMode:exited()
-  hs.alert'Exited Hammerspoon mode'
-end
+-- Exit Leader Mode
+leaderMode:bind('', 'escape', function() leaderMode:exit() end)
 
 -------------------------------
 -- Caffeine
 -------------------------------
-spoon.Caffeine:bindHotkeys({toggle={hyper, "1"}})
-spoon.Caffeine:start()
+if spoon.Caffeine then
+  spoon.Caffeine:bindHotkeys({toggle={hyper, "1"}})
+  spoon.Caffeine:start()
+end
+
+-------------------------------
+-- WinWin
+-------------------------------
+if spoon.WinWin then
+  local winMode = hs.hotkey.modal.new(hyper, 'w')
+
+-- Exit Windows Management Mode
+leaderMode:bind('', 'escape', function() leaderMode:exit() end)
