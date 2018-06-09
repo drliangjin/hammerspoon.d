@@ -53,16 +53,19 @@ spoon.SpoonInstall.repos = {
 spoon.SpoonInstall:updateRepo()
 
 -- Create a list of essential Spoons
-if not spoonsToInstall then
-  spoonsToInstall = {
+if not spoons_list then
+  spoons_list = {
     "Caffeine",
     "WinWin",
   }
 end
 
--- Download and install spoons
-for _, _spoon in pairs(spoonsToInstall) do
-  spoon.SpoonInstall:installSpoonFromRepo(_spoon)
+-- Install and load spoons
+for _, _spoon in pairs(spoons_list) do
+  if not hs.spoons.isInstalled(_spoon) then
+    spoon.SpoonInstall:installSpoonFromRepo(_spoon)
+  end
+  hs.loadSpoon(_spoon)
 end
 
 -------------------------------
@@ -83,6 +86,5 @@ end
 -------------------------------
 -- Caffeine
 -------------------------------
-hs.loadSpoon("Caffeine")
 spoon.Caffeine:bindHotkeys({toggle={hyper, "1"}})
 spoon.Caffeine:start()
