@@ -52,8 +52,18 @@ spoon.SpoonInstall.repos = {
 -- Update default Spoons repos
 spoon.SpoonInstall:updateRepo()
 
+-- Create a list of essential Spoons
+if not spoonsToInstall then
+  spoonsToInstall = {
+    "Caffeine",
+    "WinWin",
+  }
+end
+
 -- Download and install spoons
-spoon.SpoonInstall:installSpoonFromRepo("Caffeine")
+for _, _spoon in pairs(spoonsToInstall) do
+  spoon.SpoonInstall:installSpoonFromRepo(_spoon)
+end
 
 -------------------------------
 -- Hotkey Modal
