@@ -44,6 +44,7 @@ require("core/spoon-install")
 -------------------------------
 -- Caffeine
 -------------------------------
+spoon.SpoonInstall:installSpoonFromRepo("Caffeine")
 hs.loadSpoon("Caffeine")
 spoon.Caffeine:bindHotkeys({toggle={hyper, "1"}})
 spoon.Caffeine:start()
