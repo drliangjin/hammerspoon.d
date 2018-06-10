@@ -101,10 +101,10 @@ function download_spoon() {
         echo " => unable to download ${spoon_name} !"
         return 1
       else
-        echo "Installing Spoon: ${spoon_name}...done "
+        echo "Downloading Spoon: ${spoon_name}...done "
       fi
     else
-      echo "Installing Spoon: ${spoon_name}...skipped "
+      echo "Downloading Spoon: ${spoon_name}...skipped "
     fi
   fi
 }
