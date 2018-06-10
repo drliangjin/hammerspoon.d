@@ -29,6 +29,8 @@ git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammersp
 ## :loudspeaker: Updates
 
 ## :construction: Development
+### TODO
+- [ ] hold down <kbd>Command</kbd> to trigger cheatsheet for the focused application, if no focused window then default Apple shortcuts
 
 ## :beginner: Resources
 - [zzamboni's blog on getting started with hammerspoon](http://zzamboni.org/post/getting-started-with-hammerspoon/)
