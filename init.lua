@@ -57,6 +57,7 @@ if not spoons_list then
   spoons_list = {
     "Caffeine",
     "WinWin",
+    "KSheet"
   }
 end
 
@@ -71,11 +72,6 @@ end
 -------------------------------
 -- Hotkey Modal
 -------------------------------
--- Enter Leader Mode
-leaderMode = hs.hotkey.modal.new(hyper, 'space')
-
--- Exit Leader Mode
-leaderMode:bind('', 'escape', function() leaderMode:exit() end)
 
 -------------------------------
 -- Caffeine
@@ -86,8 +82,35 @@ if spoon.Caffeine then
 end
 
 -------------------------------
+-- KSheet
+-------------------------------
+if spoon.KSheet then
+	local csMode = hs.hotkey.modal.new(hyper, "s")
+  function csMode:entered() spoon.KSheet:show() end
+	csMode:bind("", "escape", function ()
+		spoon.KSheet:hide()
+		csMode:exit()
+	end)
+end
+
+-------------------------------
 -- WinWin
 -------------------------------
 if spoon.WinWin then
-  local winMode = hs.hotkey.modal.new(hyper, 'w')
+  local winMode = hs.hotkey.modal.new(hyper, "w")
+  function winMode:entered() hs.alert'Entered WinWin' end
+  function winMode:exited() hs.alert'Exited WinWin' end
   winMode:bind('', 'escape', function() winMode:exit() end)
+  winMode:bind('', 'h', 'Move Leftward', function() spoon.WinWin:stepResize("left") end, nil, function() spoon.WinWin:stepResize("left") end)
+  winMode:bind('', 'l', 'Move Rightward', function() spoon.WinWin:stepResize("right") end, nil, function() spoon.WinWin:stepResize("right") end)
+  winMode:bind('', 'k', 'Move Upward', function() spoon.WinWin:stepResize("up") end, nil, function() spoon.WinWin:stepResize("up") end)
+  winMode:bind('', 'j', 'Move Downward', function() spoon.WinWin:stepResize("down") end, nil, function() spoon.WinWin:stepResize("down") end)
+  winMode:bind('shift', 'h', 'Lefthalf of Screen', function() spoon.WinWin:moveAndResize("halfleft") end)
+  winMode:bind('shift', 'l', 'Righthalf of Screen', function() spoon.WinWin:moveAndResize("halfright") end)
+  winMode:bind('shift', 'k', 'Uphalf of Screen', function() spoon.WinWin:moveAndResize("halfup") end)
+  winMode:bind('shift', 'j', 'Downhalf of Screen', function() spoon.WinWin:moveAndResize("halfdown") end)
+  winMode:bind('shift', 'f', 'Fullscreen', function() spoon.WinWin:moveAndResize("fullscreen") end)
+  winMode:bind('shift', 'c', 'Center Window', function() spoon.WinWin:moveAndResize("center") end)
+  winMode:bind('', '=', 'Stretch Outward', function() spoon.WinWin:moveAndResize("expand") end, nil, function() spoon.WinWin:moveAndResize("expand") end)
+  winMode:bind('', '-', 'Shrink Inward', function() spoon.WinWin:moveAndResize("shrink") end, nil, function() spoon.WinWin:moveAndResize("shrink") end)
+end
