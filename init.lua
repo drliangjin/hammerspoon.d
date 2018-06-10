@@ -90,6 +90,4 @@ end
 -------------------------------
 if spoon.WinWin then
   local winMode = hs.hotkey.modal.new(hyper, 'w')
-
--- Exit Windows Management Mode
-leaderMode:bind('', 'escape', function() leaderMode:exit() end)
+  winMode:bind('', 'escape', function() winMode:exit() end)
