@@ -9,7 +9,7 @@ return 1
 
 # Remote configuration repo
 GH_USER="drliangjin"
-GH_REPO=".hammerspoon.d"
+GH_REPO="hammerspoon.d"
 GH_BRANCH="master"
 
 # Local configuration dir
