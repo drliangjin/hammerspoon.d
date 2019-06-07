@@ -3,7 +3,7 @@ Created with :heart: by Dr Liang Jin
 
 ## :rocket: Quick Start
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/drliangjin/mini-hammerspoon/master/tools/install)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/drliangjin/hammerspoon.d/master/tools/install)"
 ```
 ## :scroll: Introduction
 This is my [Hammerspoon](https://www.hammerspoon.org/) configuration.
