@@ -32,6 +32,18 @@ git clone https://github.com/drliangjin/.hammerspoon.d.git && ln -sf ~/.hammersp
 ### TODO
 - [ ] hold down <kbd>Command</kbd> to trigger cheatsheet for the focused application, if no focused window then default Apple shortcuts
 
+- [ ] create i3wm window management system
+  - [ ] a <kbd>Hyper</kbd> key for hammerspoon
+  - [ ] <kbd>Hyper</kbd> + <kbd>Enter</kbd> = Terminal
+  - [ ] <kbd>Hyper</kbd> + h, j, k, l = move focus
+  - [ ] <kbd>Hyper</kbd> + v, V = vertical, horizontal split
+  - [ ] <kbd>Hyper</kbd> + s = search/seal?
+  - [ ] <kbd>Hyper</kbd> + e = emacs/vim?
+  - [ ] <kbd>Hyper</kbd> + num = work space #
+  - [ ] <kbd>Hyper</kbd> + <kbd>Shift</kbd> + num = move focused window to work space #
+  - [ ] <kbd>Hyper</kbd> + q = quit focused window
+  
+
 ## :beginner: Resources
 - [zzamboni's blog on getting started with hammerspoon](http://zzamboni.org/post/getting-started-with-hammerspoon/)
 - [zzamboni's blog on using spoons in hammerspoon](http://zzamboni.org/post/using-spoons-in-hammerspoon/)
