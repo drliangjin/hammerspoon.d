@@ -9,19 +9,14 @@ hyper = { 'shift', 'ctrl', 'alt', 'cmd' }
 -------------------------------
 -- Launch Hammerspoon when login
 hs.autoLaunch(true)
-
 -- Check for Hammerspoon updates
 hs.automaticallyCheckForUpdates(false)
-
 -- Show Hammerspoon menu icon
 hs.menuIcon(true)
-
 -- Hide Hammerspoon dock icon
 hs.dockIcon(false)
-
 -- Keep Console window on top
 hs.consoleOnTop(true)
-
 -- Send crash data to Hammerspoon
 hs.uploadCrashData(true)
 
@@ -39,6 +34,7 @@ hs.window.animationDuration = 0
 -- SpoonInstall
 -------------------------------
 -- "SpoonInstall" is downloaded using the tool/install script
+-- examine if the file exists?
 hs.loadSpoon("SpoonInstall")
 
 -- Add official github Spoons repos
